@@ -1,18 +1,28 @@
 from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
-# from ..camera.camera import Camera
+from ..database.database import Database
 
 class Server:
 
-    app:Flask
-    db:SQLAlchemy
+    app : Flask
+    database : Database
 
     def __init__(self):
         self.app = Flask(__name__)
-        self.db = SQLAlchemy()
-        self.injectDB()
+        self.database = Database()
+        self.addRegister()
         
-    def injectDB(self):
-        self.app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:////home/erick/db.db" 
-        self.db.init_app(self.app)
-        with self.app.app_context():self.db.create_all()
+    def addRegister(self):
+        from src.auth.auth_controller import bp as bpAuth
+        # self.app.register_blueprint(bpAuth)
+        pass
+
+    def getServer(self)->Flask:
+        return self.app
+    # def injectDB(self):
+    #     self.__engine = create_engine(self.__url_object)
+    #     self.__db_session = sessionmaker(autocommit=False, autoflush=False, bind=self.__engine)
+
+    # def initDB(self):
+    #     self.database = Database(engine=self.__engine)
+    #     self.database.init()
+        
