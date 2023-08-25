@@ -5,8 +5,12 @@ from .mapped_classes import base, User, Role
 class Database:
 
     __url_object = URL.create(
-        'sqlite',
-        database='cameraDeclarative.db',
+        'mysql+pymysql',
+        username='Eleazar',
+        password='Imperator-5887',
+        host='localhost',
+        port= 3306,
+        database='peopleCount'
     )
 
     __engine:Engine
