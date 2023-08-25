@@ -250,9 +250,14 @@
 												"$ref": "AAAAAAGJ+sldjo50Lj8="
 											},
 											"font": "Arial;13;0",
+<<<<<<< HEAD
 											"left": 109,
 											"top": 218,
 											"width": 98.74267578125,
+=======
+											"left": 173,
+											"top": 226,
+											"width": 80.68359375,
 											"height": 13
 										},
 										{
@@ -263,6 +268,22 @@
 											},
 											"model": {
 												"$ref": "AAAAAAGKAHhGk4FrQZk="
+											},
+											"font": "Arial;13;0",
+											"left": 173,
+											"top": 241,
+											"width": 80.68359375,
+>>>>>>> f4f9e7b650aae3d563babd40e973b10ebb042941
+											"height": 13
+										},
+										{
+											"_type": "ERDColumnView",
+											"_id": "AAAAAAGJ+sl/FY5+c5M=",
+											"_parent": {
+												"$ref": "AAAAAAGJ+sfx945Vpd0="
+											},
+											"model": {
+												"$ref": "AAAAAAGJ+sl/D457Oco="
 											},
 											"font": "Arial;13;0",
 											"left": 109,
@@ -667,9 +688,15 @@
 										"$ref": "AAAAAAGKLYsDNj+3fao="
 									},
 									"font": "Arial;13;1",
+<<<<<<< HEAD
 									"left": 288,
 									"top": 389,
 									"width": 147.03173828125,
+=======
+									"left": 480,
+									"top": 325,
+									"width": 101.5126953125,
+>>>>>>> f4f9e7b650aae3d563babd40e973b10ebb042941
 									"height": 13,
 									"text": "Incidencias"
 								},
@@ -693,6 +720,7 @@
 												"$ref": "AAAAAAGKLYsekT/C7dc="
 											},
 											"font": "Arial;13;0",
+<<<<<<< HEAD
 											"left": 293,
 											"top": 412,
 											"width": 137.03173828125,
@@ -711,6 +739,11 @@
 											"left": 293,
 											"top": 427,
 											"width": 137.03173828125,
+=======
+											"left": 485,
+											"top": 348,
+											"width": 91.5126953125,
+>>>>>>> f4f9e7b650aae3d563babd40e973b10ebb042941
 											"height": 13
 										},
 										{
@@ -723,9 +756,15 @@
 												"$ref": "AAAAAAGKLYtyoT/JB24="
 											},
 											"font": "Arial;13;0",
+<<<<<<< HEAD
 											"left": 293,
 											"top": 442,
 											"width": 137.03173828125,
+=======
+											"left": 485,
+											"top": 363,
+											"width": 91.5126953125,
+>>>>>>> f4f9e7b650aae3d563babd40e973b10ebb042941
 											"height": 13
 										},
 										{
@@ -738,6 +777,7 @@
 												"$ref": "AAAAAAGKLYvZaT/QHpQ="
 											},
 											"font": "Arial;13;0",
+<<<<<<< HEAD
 											"left": 293,
 											"top": 457,
 											"width": 137.03173828125,
@@ -756,10 +796,16 @@
 											"left": 293,
 											"top": 472,
 											"width": 137.03173828125,
+=======
+											"left": 485,
+											"top": 378,
+											"width": 91.5126953125,
+>>>>>>> f4f9e7b650aae3d563babd40e973b10ebb042941
 											"height": 13
 										}
 									],
 									"font": "Arial;13;0",
+<<<<<<< HEAD
 									"left": 288,
 									"top": 407,
 									"width": 147.03173828125,
@@ -771,12 +817,26 @@
 							"top": 384,
 							"width": 147.03173828125,
 							"height": 106,
+=======
+									"left": 480,
+									"top": 343,
+									"width": 101.5126953125,
+									"height": 53
+								}
+							],
+							"font": "Arial;13;0",
+							"left": 480,
+							"top": 320,
+							"width": 101.5126953125,
+							"height": 76,
+>>>>>>> f4f9e7b650aae3d563babd40e973b10ebb042941
 							"nameLabel": {
 								"$ref": "AAAAAAGKLYsDNj+4eh0="
 							},
 							"columnCompartment": {
 								"$ref": "AAAAAAGKLYsDNj+5LGc="
 							}
+<<<<<<< HEAD
 						},
 						{
 							"_type": "ERDRelationshipView",
@@ -859,6 +919,8 @@
 							"headNameLabel": {
 								"$ref": "AAAAAAGKLZOYi0BFsnw="
 							}
+=======
+>>>>>>> f4f9e7b650aae3d563babd40e973b10ebb042941
 						}
 					]
 				},
@@ -1166,6 +1228,7 @@
 								"$ref": "AAAAAAGKLYsDNT+1Y5s="
 							},
 							"name": "id",
+<<<<<<< HEAD
 							"length": 0,
 							"primaryKey": true
 						},
@@ -1178,6 +1241,9 @@
 							"name": "idCamara",
 							"length": 0,
 							"foreignKey": true
+=======
+							"length": 0
+>>>>>>> f4f9e7b650aae3d563babd40e973b10ebb042941
 						},
 						{
 							"_type": "ERDColumn",
@@ -1194,6 +1260,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGKLYsDNT+1Y5s="
 							},
+<<<<<<< HEAD
 							"name": "description",
 							"length": 0
 						},
@@ -1205,6 +1272,9 @@
 							},
 							"name": "numberPersons",
 							"length": 0
+=======
+							"name": "Column1"
+>>>>>>> f4f9e7b650aae3d563babd40e973b10ebb042941
 						}
 					]
 				}

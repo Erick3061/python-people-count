@@ -1,9 +1,7 @@
-
-from src.database.mapped_classes import User
 from sqlalchemy.orm import Session
+from ..database.mapped_classes import User
 
 class UserService:
-    
     __session:Session
 
     def __init__(self, session:Session) -> None:
