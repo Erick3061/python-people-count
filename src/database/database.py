@@ -1,6 +1,6 @@
 from sqlalchemy.orm import sessionmaker, DeclarativeBase, Session
 from sqlalchemy import Engine, create_engine, URL
-from .mapped_classes import base, User, Role
+from .mapped_classes import base
 
 class Database:
 
@@ -10,7 +10,7 @@ class Database:
         password='Imperator-5887',
         host='localhost',
         port= 3306,
-        database='peopleCount'
+        database='peoplecount'
     )
 
     __engine:Engine
