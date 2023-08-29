@@ -9,7 +9,7 @@ class UserService:
 
     def create(self,user:User)-> User:
 
-        return user;
+        return user
 
     def find(self):
         

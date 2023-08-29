@@ -18,8 +18,8 @@ class User(base):
     role:Mapped[Optional[Role]] = mapped_column(default=Role.ADMIN)
     isActive:Mapped[Optional[bool]] = mapped_column(default=True)
 
-class Camara(base):
-    __tablename__ = "Camara"
+class Camera(base):
+    __tablename__ = "Camera"
 
     id: Mapped[int] = mapped_column(primary_key=True)
     name: Mapped[str] = mapped_column(String(60))
@@ -39,7 +39,7 @@ class Incidents(base):
     date: Mapped[str] = mapped_column(DateTime, server_default=text("CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP"))
     description: Mapped[str] = mapped_column(String(100))
     countPeople: Mapped[int] = mapped_column(Integer())
-    idCamara: Mapped[int] = mapped_column(ForeignKey("Camara.id"))
+    idCamara: Mapped[int] = mapped_column(ForeignKey("Camera.id"))
 
 class Contact(base):
     __tablename__ = "Contact"
@@ -53,5 +53,5 @@ class Notification(base):
     __tablename__ = "Notification"
 
     id: Mapped[int] = mapped_column(primary_key=True)
-    idCamara: Mapped[int] = mapped_column(ForeignKey("Camara.id"))
+    idCamara: Mapped[int] = mapped_column(ForeignKey("Camera.id"))
     idContact: Mapped[int] = mapped_column(ForeignKey("Contact.id"))

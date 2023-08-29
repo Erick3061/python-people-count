@@ -1,4 +1,3 @@
-from typing import Any
 from sqlalchemy.orm import Session
 from flask import Flask, Blueprint
 from .user_controller import controller

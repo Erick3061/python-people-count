@@ -3,6 +3,7 @@ from ..database.database import Database
 from ..auth.auth import Auth
 from ..user.user import User
 from ..main.main import Main
+from ..camara.camera import Camera
  
 class Server:
 
@@ -10,6 +11,8 @@ class Server:
     database : Database
 
     user:User
+
+    camera:Camera
 
     def __init__(self):
         self.app = Flask(__name__)
@@ -20,5 +23,6 @@ class Server:
     def addRegister(self):
         Main(self.app)
         self.user = User(self.app,self.database.session)
+        self.camera = Camera(self.app, self.database.session)
         Auth(self.app, self.user.getService())
         

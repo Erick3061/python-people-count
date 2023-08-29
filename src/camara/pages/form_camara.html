@@ -1,0 +1,44 @@
+{%extends "base.html"%}
+
+{% block content%}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h4>Camara</h4>
+            <form method="POST" action="/camera">
+                <div class="form-floating mb-3">
+                    <input name="cameraName" type="name" class="form-control" id="cameraName" placeholder="Name" required>
+                    <label for="cameraName">Camera name</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input name="floatingUrl" type="name" class="form-control" id="floatingUrl" 
+                    placeholder="rtsp://user:password@ip/camera" required>
+                    <label for="floatingUrl">Camera url</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input name="floatingLimTop" type="number" class="form-control" id="floatingLimTop" placeholder="" min="1" max="25" required>
+                    <label for="floatingLimTop">Top limit (1-25)</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input name="floatingLimBut" type="number" class="form-control" id="floatingLimBut" placeholder="" min="0" max="20">
+                    <label for="floatingLimBut">Lower limit (0-20)</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <select name="sendTime" class="form-select" id="sendTime" aria-label="Send time" required>
+                        <option selected>Select sending time</option>
+                        <option value="15">15 minutes</option>
+                        <option value="20">20 minutes</option>
+                        <option value="30">30 minutes</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Creat</button>
+            </form>
+        </div>
+        <div class="col">
+            <h4>Notification</h4>
+        </div>
+    </div>
+</div>
+{% endblock %}
