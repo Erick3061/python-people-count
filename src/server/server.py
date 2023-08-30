@@ -4,6 +4,7 @@ from ..auth.auth import Auth
 from ..user.user import User
 from ..main.main import Main
 from ..camara.camera import Camera
+from ..contact.contact import Contact
  
 class Server:
 
@@ -13,6 +14,7 @@ class Server:
     user:User
 
     camera:Camera
+    contact:Contact
 
     def __init__(self):
         self.app = Flask(__name__)
@@ -24,5 +26,6 @@ class Server:
         Main(self.app)
         self.user = User(self.app,self.database.session)
         self.camera = Camera(self.app, self.database.session)
+        self.contact = Contact(self.app, self.database.session)
         Auth(self.app, self.user.getService())
         

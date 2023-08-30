@@ -1,0 +1,31 @@
+{%extends "base.html"%}
+
+{% block content%}
+<div class="container">
+    <div class="row">
+        <h1>{{error}}</h1>
+        <div class="col">
+            <h4>Add contact</h4>
+            <form method="POST" action="/contact">
+                <div class="form-floating mb-3">
+                    <input name="contactName" type="name" class="form-control" id="contactName" placeholder="Name" required>
+                    <label for="contactName">Name</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input name="contactEmail" type="email" class="form-control" id="contactEmail" 
+                    placeholder="ejemplo@email.com" required>
+                    <label for="contactEmail">Email</label>
+                </div>
+                <button type="submit" class="btn btn-primary">Add</button>
+            </form>
+        </div>
+        <div class="col">
+            <h4>Delet contact</h4>
+            <form method="POST" action="/contact">
+                <input type="radio" class="btn-check" name="options-outlined" id="danger-outlined" autocomplete="off">
+                <label class="btn btn-outline-danger" for="danger-outlined">Delete contact</label>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

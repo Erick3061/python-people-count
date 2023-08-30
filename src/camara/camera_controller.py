@@ -7,7 +7,6 @@ def controller(bp:Blueprint, service:CameraService):
     @bp.route('/', methods=('GET', 'POST'))
     def crearCamera():
         if request.method == 'POST':
-            print("funciona")
             cameraName = request.form['cameraName']
             url = request.form['floatingUrl']
             top = request.form['floatingLimTop']
