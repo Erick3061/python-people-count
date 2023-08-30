@@ -8,5 +8,6 @@ class CameraService:
         self.__session = session
 
     def create(self, camera:Camera) -> Camera:
-        print(camera)
+        self.__session.add(camera)
+        self.__session.commit()
         return camera

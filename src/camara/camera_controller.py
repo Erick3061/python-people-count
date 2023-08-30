@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template, request,redirect,url_for, flash
 from .camera_service import CameraService
+from ..database.mapped_classes import Camera
 
 def controller(bp:Blueprint, service:CameraService):
     
@@ -12,11 +13,8 @@ def controller(bp:Blueprint, service:CameraService):
             top = request.form['floatingLimTop']
             low = request.form['floatingLimBut']
             sendTime = request.form['sendTime']
-            print(f'Nombre de la camara: {cameraName}')
-            print(f'Url de la camara: {url}')
-            print(f'El limite maximo es: {top}')
-            print(f'El limite maximo es: {low}')
-            print(f'Tiempo entre alertas una vez activo el evento {sendTime} minutos')
+            newCamera = Camera(name=cameraName, url=url, limTop=top, limBut=low, sendTime=sendTime)
+            service.create(newCamera)
             return redirect(url_for('camera.crearCamera'))
         return render_template('form_camara.html')
         
