@@ -1,6 +1,8 @@
 from sqlalchemy.orm import Session
-from sqlalchemy import exc
+from sqlalchemy import exc, select
 from ..database.mapped_classes import Contact
+from flask import flash
+
 
 class ContactService:
     __session:Session
@@ -14,4 +16,10 @@ class ContactService:
             self.__session.commit()
             return contact
         except exc.SQLAlchemyError as error:
-            return str(error.__dict__)
+            self.__session.rollback()
+            if '1062, "Duplicate entry' in str(error.__dict__['orig']):
+                flash("Correo duplicado, Inserte uno nuevo","error")     
+            flash(str(error.__dict__['orig']))
+
+    def find(self):
+        return self.__session.scalars(select(Contact))

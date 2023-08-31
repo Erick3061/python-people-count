@@ -3,25 +3,43 @@
 {% block content%}
 <div class="container">
     <div class="row">
-        <h1>{{error}}</h1>
-        <div class="col">
+        <div class="col p-3">
+
+            {% with errors = get_flashed_messages(category_filter=["error"]) %}
+            {% if errors %}
+            <div class="alert alert-danger" role="alert">
+                {{errors[0]}}
+            </div>
+            {% endif %}
+            {% endwith %}
+
             <h4>Add contact</h4>
-            <form method="POST" action="/contact">
+            <form class="needs-validation" method="POST" action="/contact">
                 <div class="form-floating mb-3">
-                    <input name="contactName" type="name" class="form-control" id="contactName" placeholder="Name" required>
+                    <input name="contactName" type="name" class="form-control" id="contactName" placeholder="Name"
+                        required>
                     <label for="contactName">Name</label>
                 </div>
+
                 <div class="form-floating mb-3">
-                    <input name="contactEmail" type="email" class="form-control" id="contactEmail" 
-                    placeholder="ejemplo@email.com" required>
-                    <label for="contactEmail">Email</label>
+                    <input name="contactEmail" type="email" class="form-control" id="contactEmail"
+                        placeholder="ejemplo@email.com" required>
+                    <label for="contactEmail" class="form-label">Email</label>
                 </div>
                 <button type="submit" class="btn btn-primary">Add</button>
             </form>
         </div>
-        <div class="col">
+        <div class="col p-3">
             <h4>Delet contact</h4>
-            <form method="POST" action="/contact">
+            <form method="POST" action="#">
+                {%- for email in emails %}
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        {{ email }}
+                    </label>
+                </div>
+                {% endfor -%}
                 <input type="radio" class="btn-check" name="options-outlined" id="danger-outlined" autocomplete="off">
                 <label class="btn btn-outline-danger" for="danger-outlined">Delete contact</label>
             </form>

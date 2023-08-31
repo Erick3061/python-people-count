@@ -6,9 +6,9 @@ class Database:
 
     __url_object = URL.create(
         'mysql+pymysql',
-        username='Eleazar',
-        password='Imperator-5887',
-        host='localhost',
+        username='root',
+        password='root',
+        host='0.0.0.0',
         port= 3306,
         database='peoplecount'
     )

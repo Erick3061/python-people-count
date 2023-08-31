@@ -5,6 +5,8 @@ from ..user.user import User
 from ..main.main import Main
 from ..camara.camera import Camera
 from ..contact.contact import Contact
+from werkzeug.middleware.proxy_fix import ProxyFix
+
  
 class Server:
 
@@ -19,6 +21,8 @@ class Server:
     def __init__(self):
         self.app = Flask(__name__)
         self.app.config['EXPLAIN_TEMPLATE_LOADING'] = True
+        self.app.secret_key = 'secret'
+        self.app.wsgi_app =ProxyFix(self.app.wsgi_app)
         self.database = Database()
         self.addRegister()
         
