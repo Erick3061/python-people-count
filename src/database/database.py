@@ -6,11 +6,11 @@ class Database:
 
     __url_object = URL.create(
         'mysql+pymysql',
-        username='root',
-        password='root',
-        host='0.0.0.0',
+        username='Eleazar',
+        password='Imperator-5887',
+        host='localhost',
         port= 3306,
-        database='peoplecount'
+        database='peopleCount'
     )
 
     __engine:Engine

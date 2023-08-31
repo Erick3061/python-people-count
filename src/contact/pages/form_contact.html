@@ -31,17 +31,17 @@
         </div>
         <div class="col p-3">
             <h4>Delet contact</h4>
-            <form method="POST" action="#">
+            <form method="POST" action="/contact/many">
                 {%- for email in emails %}
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <input class="form-check-input" type="checkbox" value="{{ email }}" name="delEmail" id="flexCheckDefault">
                     <label class="form-check-label" for="flexCheckDefault">
                         {{ email }}
                     </label>
                 </div>
                 {% endfor -%}
-                <input type="radio" class="btn-check" name="options-outlined" id="danger-outlined" autocomplete="off">
-                <label class="btn btn-outline-danger" for="danger-outlined">Delete contact</label>
+                <!-- <button type="button" class="btn btn-danger">Delete contact</button> -->
+                <button type="submit" class="btn btn-danger">Delete contact</button>
             </form>
         </div>
     </div>
