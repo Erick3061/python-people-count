@@ -1,5 +1,6 @@
 from sqlalchemy.orm import Session
-from ..database.mapped_classes import Camera
+from sqlalchemy import select
+from ..database.mapped_classes import Camera, Contact
 
 class CameraService:
     __session:Session
@@ -11,3 +12,9 @@ class CameraService:
         self.__session.add(camera)
         self.__session.commit()
         return camera
+    
+    def find(self):
+        return self.__session.scalars(select(Camera))
+    
+    def findContact(self):
+        return self.__session.scalars(select(Contact))

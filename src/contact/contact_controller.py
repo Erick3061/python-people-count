@@ -10,7 +10,6 @@ def controller(bp:Blueprint, service:ContactService):
         contacts:ScalarResult[Contact] =[]
 
         if request.method == 'POST':
-            print("funciona")
             name = request.form['contactName']
             email = request.form['contactEmail']
             newContact = Contact(name=name, email=email)
@@ -23,11 +22,8 @@ def controller(bp:Blueprint, service:ContactService):
     
     @bp.post("/many")
     def deleteMany():
-        print('entro a elimanar varios')
         delContact = request.form.getlist('delEmail')
-        stmt = select(Contact).where(Contact.email.in_(delContact))
-        stmt = str(stmt)
-        for contact in delContact:
-            service.deleteMore(contact)
+        if len(delContact) != 0:
+            service.deleteMore(delContact)
         return redirect(url_for('contact.crearContact'))
     return bp

@@ -1,5 +1,6 @@
+from typing import Iterable
 from sqlalchemy.orm import Session
-from sqlalchemy import exc, select, Select, String
+from sqlalchemy import exc, select
 from ..database.mapped_classes import Contact
 from flask import flash
 
@@ -24,5 +25,11 @@ class ContactService:
     def find(self):
         return self.__session.scalars(select(Contact))
     
-    def deleteMore(self, stmt: Select[String[Contact]]):
-        print(stmt)
+    def deleteMore(self, emails:Iterable[str]):
+        query = select(Contact).where(Contact.email.in_(emails))
+        forDelete = self.__session.scalars(query)
+        for email in forDelete:
+            self.__session.delete(email)
+        self.__session.commit()
+        return ''
+    

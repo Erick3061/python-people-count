@@ -38,6 +38,20 @@
         </div>
         <div class="col">
             <h4>Notification</h4>
+            <form method="POST" action="/camera/notify">
+                <div class="row">
+                    <div class="col mb-3">
+                        <h5>Select camera</h5>
+                        <select class="form-select mb-3" name="camera" aria-label="">
+                            <option selected>Select a camera</option>
+                            {%- for camera in names %}
+                                <option value="{{camera.id}}">{{ camera.name }}</option>
+                            {% endfor -%}
+                        </select>
+                        <button type="submit" class="btn btn-primary">Add notify</button>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
 </div>
